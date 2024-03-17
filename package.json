@@ -1,6 +1,6 @@
 {
-  "name": "requestor",
-  "displayName": "Requestor",
+  "name": "httpioneer",
+  "displayName": "HTTPioneer",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -12,9 +12,21 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "customEditors": [
+      {
+        "viewType": "httpioneer.editor",
+        "displayName": "HTTPioneer",
+        "selector": [
+          {
+            "filenamePattern": "**/requests/**/*.json"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
     "commands": [
       {
-        "command": "requestor.helloWorld",
+        "command": "httpioneer.helloWorld",
         "title": "Hello World"
       }
     ]
